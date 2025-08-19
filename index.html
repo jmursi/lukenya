@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seniors Digital Literacy Program - Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        /* Slide 1 - Title */
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD93D, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .institute-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        
+        /* Slide 2 - Problem */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .pain-point {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .pain-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .pain-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-highlight {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .big-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Slide 3 - Solution */
+        .solution-overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .solution-visual {
+            text-align: center;
+            font-size: 8rem;
+        }
+        
+        .solution-details h3 {
+            color: #4ECDC4;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            background: #F8F9FA;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4ECDC4;
+        }
+        
+        /* Slide 4 - Program Structure */
+        .program-structure {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .session-card {
+            background: linear-gradient(135deg, #4ECDC4, #44A08D);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .session-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .session-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .session-format {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .topic-item {
+            background: rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Slide 5 - What We'll Cover */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .coverage-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .coverage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Slide */
+        .cta-content {
+            text-align: center;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #FF6B6B;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: inline-block;
+            margin: 30px 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #4ECDC4;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-grid,
+            .program-structure,
+            .coverage-grid {
+                grid-template-columns: 1fr;
+            }
+            .solution-overview {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="slide-number">1/6</div>
+        <div class="slide-content title-slide">
+            <div class="institute-logo">🎓 DAYSTAR INSTITUTE of DATA SCIENCE , AI & CYBERSECURITY</div>
+            <div style="font-size: 1.2rem; margin-bottom: 30px;">Data Science • AI • Cybersecurity</div>
+            <div class="main-title">Seniors Digital Literacy Program</div>
+            <div class="subtitle">Bridging the Digital Divide in Lukenya Community in Partnership with IwazoLab</div>
+            <div style="font-size: 1.5rem; margin-top: 30px;">
+                👥 Empowering Seniors (55+) • 🔒 Safe Digital Navigation • 📱 Practical Skills
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+        <div class="slide-number">2/6</div>
+        <div class="slide-content">
+            <h1>🚨 The Digital Divide Crisis</h1>
+            
+            <div class="stat-highlight">
+                <div class="big-number">60%</div>
+                <div>of Kenyan seniors aged 65+ have NEVER used the internet</div>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="pain-point">
+                    <div class="pain-icon">🎯</div>
+                    <div class="pain-title">Scam Vulnerability</div>
+                    <p>Seniors lose KSh 2.3B annually to online fraud</p>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="pain-icon">🏥</div>
+                    <div class="pain-title">Service Exclusion</div>
+                    <p>Cannot access digital banking, eCitizen, NHIF services</p>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="pain-icon">👨‍👩‍👧‍👦</div>
+                    <div class="pain-title">Family Disconnection</div>
+                    <p>Isolated from family communication on WhatsApp, video calls</p>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="pain-icon">📱</div>
+                    <div class="pain-title">Technology Anxiety</div>
+                    <p>Fear of breaking devices, making mistakes online</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Our Solution -->
+    <div class="slide">
+        <div class="slide-number">3/6</div>
+        <div class="slide-content">
+            <h1>💡 Our Solution</h1>
+            
+            <div class="solution-overview">
+                <div class="solution-visual">📱➡️🔒➡️👥</div>
+                <div class="solution-details">
+                    <h3>Structured Digital Literacy Program</h3>
+                    <p>Practical, hands-on training designed specifically for seniors</p>
+                    
+                    <ul class="feature-list">
+                        <li>✅ <strong>Expert Instruction</strong> - Cybersecurity professionals</li>
+                        <li>✅ <strong>Small Groups</strong> - Maximum 15 participants per Practical session</li>
+                        <li>✅ <strong>Practical Approach</strong> - Real devices, real scenarios</li>
+                        <li>✅ <strong>Safety First</strong> - Scam prevention focus</li>
+                        <li>✅ <strong>Take-Home Materials</strong> - Large font guides</li>
+                        <li>✅ <strong>Ongoing Support</strong> - Follow-up assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Program Structure -->
+    <div class="slide">
+        <div class="slide-number">4/6</div>
+        <div class="slide-content">
+            <h1>📋 Program Structure</h1>
+            
+            <div class="program-structure">
+                <div class="session-card">
+                    <div class="session-number">1</div>
+                    <div class="session-title">Online Introduction</div>
+                    <div class="session-format">🖥️ Virtual Session • 2 Hours</div>
+                    <div class="topics-grid">
+                        <div class="topic-item">Program Overview</div>
+                        <div class="topic-item">Basic Concepts</div>
+                        <div class="topic-item">Safety Principles</div>
+                        <div class="topic-item">Q&A Session</div>
+                    </div>
+                </div>
+                
+                <div class="session-card">
+                    <div class="session-number">2</div>
+                    <div class="session-title">Hands-On Workshop</div>
+                    <div class="session-format">🏢 Physical Session • 2 Hours</div>
+                    <div class="topics-grid">
+                        <div class="topic-item">Device Practice</div>
+                        <div class="topic-item">App Installation</div>
+                        <div class="topic-item">Real-world Tasks</div>
+                        <div class="topic-item">Individual Support</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <div style="background: linear-gradient(45deg, #FFD93D, #FF6B6B); color: white; padding: 15px 30px; border-radius: 50px; display: inline-block; font-weight: bold;">
+                    Total: 4 Hours • Maximum Impact
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: What We'll Cover -->
+    <div class="slide">
+        <div class="slide-number">5/6</div>
+        <div class="slide-content">
+            <h1>📚 What We'll Cover</h1>
+            
+            <div class="coverage-grid">
+                <div class="coverage-item">
+                    <div class="coverage-icon">📱</div>
+                    <div><strong>Smartphone Basics</strong></div>
+                    <div>Navigation, calls, SMS, WhatsApp setup</div>
+                </div>
+                
+                <div class="coverage-item">
+                    <div class="coverage-icon">🛡️</div>
+                    <div><strong>Online Safety</strong></div>
+                    <div>Scam identification, secure passwords, safe browsing</div>
+                </div>
+                
+                <div class="coverage-item">
+                    <div class="coverage-icon">💰</div>
+                    <div><strong>Digital Banking</strong></div>
+                    <div>Mobile money, online banking, transaction safety</div>
+                </div>
+                
+                <div class="coverage-item">
+                    <div class="coverage-icon">🏛️</div>
+                    <div><strong>Government Services</strong></div>
+                    <div>eCitizen registration, NHIF access, online applications</div>
+                </div>
+            </div>
+            
+            <div style="background: #F8F9FA; padding: 30px; border-radius: 15px; margin-top: 30px; text-align: center;">
+                <h3 style="color: #4ECDC4; margin-bottom: 15px;">🎯 Learning Outcomes</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div>✅ Confident device use</div>
+                    <div>✅ Scam prevention skills</div>
+                    <div>✅ Family communication</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Call to Action -->
+    <div class="slide">
+        <div class="slide-number">6/6</div>
+        <div class="slide-content cta-content">
+            <h1 style="color: white;">🚀 Let's Bridge the Digital Divide Together!</h1>
+            
+            <div style="font-size: 1.3rem; margin: 30px 0;">
+                <div>👥 <strong>50 Seniors</strong> • 🆓 <strong>Completely FREE</strong> • 🎯 <strong>Immediate Impact</strong></div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 30px 0;">
+                <div style="font-size: 1.1rem; margin-bottom: 15px;">Partnership Benefits for Lukenya Community:</div>
+                <div>🤝 Enhanced member welfare • 🔒 Improved online safety • 👨‍👩‍👧‍👦 Stronger family connections</div>
+            </div>
+            
+                   
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div><strong>Email</strong><br>jmursi@daystar.ac.ke</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div><strong>Phone</strong><br>+254 710 469 003</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🏛️</div>
+                    <div><strong>Institute</strong><br>Daystar University</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
